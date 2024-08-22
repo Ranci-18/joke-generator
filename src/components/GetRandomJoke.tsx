@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../sass/getRandomJoke.sass';
 
 const GetRandomJoke: React.FC = () => {
     const [joke, setJoke] = useState<Joke | null>(null);
@@ -32,10 +33,15 @@ const GetRandomJoke: React.FC = () => {
     }
 
     return (
-        <div>
-            <span>{joke?.setup}</span>
-            {showPunchline && <span>{joke?.punchline}</span>}
-            <input type="button" value="Get Joke" onClick={handleClick}/>
+        <div id="joke-container">
+            <input id="get-joke-button" type="button" value="Tell me a joke" onClick={handleClick}/>
+            <div id="joke-text1">
+                <span>{joke?.setup}</span>
+            </div>
+            <div id="joke-text2">
+                {showPunchline && <strong>{joke?.punchline}</strong>}
+            </div>
+            
         </div>
     )
 }
