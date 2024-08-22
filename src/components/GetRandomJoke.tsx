@@ -23,6 +23,7 @@ const GetRandomJoke: React.FC = () => {
 
     const handleClick = async () => {
         setShowPunchline(false);
+        setJoke(null);
         const newJoke = await getJoke();
         if (newJoke) { 
             setJoke(newJoke);
